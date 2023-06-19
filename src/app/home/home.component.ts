@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   products = {
     list: [
       {
+        "id": 1,
         "category": "Men's Sneaker",
         "name": "ULTRABOOST 22 SHOES",
         "seller": "Addidas",
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 2,
         "category": "Men's Sneaker",
         "name": "LUNAR NEW DNA SHOES",
         "seller": "Addidas",
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 3,
         "category": "Men's Sneaker",
         "name": "SUPERNOVA SHOES",
         "seller": "Addidas",
@@ -46,6 +49,7 @@ export class HomeComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 4,
         "category": "Men's Sneaker",
         "name": "LITE RACER SHOES",
         "seller": "Addidas",
@@ -58,6 +62,7 @@ export class HomeComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 5,
         "category": "Men's Sneaker",
         "name": "4DFWD SHOES",
         "seller": "Addidas",
@@ -70,6 +75,7 @@ export class HomeComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 6,
         "category": "Men's Sneaker",
         "name": "KAPTIR 2.0 SHOES",
         "seller": "Addidas",

@@ -7,6 +7,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailsProductComponent } from './product-details-product/product-details-product.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 const routes: Routes = [
@@ -17,6 +20,18 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'details/:id',
+    component: ProductDetailsComponent
+  },
+  {
+    path: 'productedit/:id',
+    component: ProductEditComponent
+  },
+  {
+    path: 'products/productdetails/:id',
+    component: ProductDetailsProductComponent
   }
 ]
 
@@ -25,7 +40,10 @@ const routes: Routes = [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductDetailsComponent,
+    ProductDetailsProductComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
 
   products = {
     list: [
       {
+        "id": 1,
         "category": "Men's Sneaker",
         "name": "ULTRABOOST 22 SHOES",
         "seller": "Addidas",
@@ -22,6 +23,7 @@ export class ProductsComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 2,
         "category": "Men's Sneaker",
         "name": "LUNAR NEW DNA SHOES",
         "seller": "Addidas",
@@ -34,6 +36,7 @@ export class ProductsComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 3,
         "category": "Men's Sneaker",
         "name": "SUPERNOVA SHOES",
         "seller": "Addidas",
@@ -46,6 +49,7 @@ export class ProductsComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 4,
         "category": "Men's Sneaker",
         "name": "LITE RACER SHOES",
         "seller": "Addidas",
@@ -58,6 +62,7 @@ export class ProductsComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 5,
         "category": "Men's Sneaker",
         "name": "4DFWD SHOES",
         "seller": "Addidas",
@@ -70,6 +75,7 @@ export class ProductsComponent implements OnInit {
         "quantity": 0
       },
       {
+        "id": 6,
         "category": "Men's Sneaker",
         "name": "KAPTIR 2.0 SHOES",
         "seller": "Addidas",
@@ -87,7 +93,24 @@ export class ProductsComponent implements OnInit {
     console.log(this.products.list);
   }
 
+  allProducts: any;
+  storedProducts: any;
+
   ngOnInit(): void {
     this.printObject()
+  }
+
+  saveToLocalstrage() {
+
+    this.allProducts = localStorage.getItem('products')
+    this.storedProducts = JSON.parse(this.allProducts)
+    // console.log(this.storedProducts.list.length);
+    if (this.storedProducts?.list?.length) {
+      alert('Data already saved! ')
+      return
+    }
+    localStorage.setItem('products', JSON.stringify(this.products))
+    alert('Data save to Localstroage')
+
   }
 }

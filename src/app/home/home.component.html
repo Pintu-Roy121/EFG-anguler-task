@@ -17,8 +17,10 @@
                         <p class="font-semibold"> Brand: {{product?.seller}}</p>
                     </div>
                     <div class="flex justify-between items-center">
-                        <button class="px-3 py-2 bg-sky-500 rounded-md text-white">Edit Product</button>
-                        <button class="px-3 py-2 bg-sky-500 rounded-md text-white">View Details</button>
+                        <a [routerLink]="['productedit',product?.id]"
+                            class="px-3 py-2 bg-sky-500 rounded-md text-white">Edit Product</a>
+                        <a [routerLink]="['details',product?.id]"
+                            class="px-3 py-2 bg-sky-500 rounded-md text-white">View Details</a>
                         <!-- <button>View Details</button> -->
                     </div>
                 </div>
