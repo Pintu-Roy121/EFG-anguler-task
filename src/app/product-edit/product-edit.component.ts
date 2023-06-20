@@ -141,11 +141,12 @@ export class ProductEditComponent implements OnInit {
     if (!this.filterProduct) {
       const confirm = window.confirm('Do you want to Save data to LocalStorage .....')
       if (!confirm) {
+        alert('Please Save First For Edit!');
         this.router.navigate(['']);
         return
       }
       localStorage.setItem('products', JSON.stringify(this.product));
-      alert('Data save to Localstroage');
+      alert('Data save to Localstroage Successful !');
 
       this.id = this.route.snapshot.paramMap.get('id');
       this.products = localStorage.getItem('products');
