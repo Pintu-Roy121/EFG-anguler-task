@@ -99,7 +99,7 @@ export class ProductEditComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private router: Router) { }
-  // constructor(private router: Router) { }
+
 
   getValues(value: any) {
     this.id = this.route.snapshot.paramMap.get('id');

@@ -89,25 +89,20 @@ export class HomeComponent implements OnInit {
       },
     ]
   }
-  // printObject() {
-  //   console.log(this.products.list);
-  // }
 
   allProducts: any;
   storedProducts: any;
 
   ngOnInit(): void {
-    // this.printObject()
     this.allProducts = localStorage.getItem('products')
     this.storedProducts = JSON.parse(this.allProducts)
-    // console.log(this.storedProducts);
   }
 
   saveToLocalstrage() {
 
     this.allProducts = localStorage.getItem('products')
     this.storedProducts = JSON.parse(this.allProducts)
-    // console.log(this.storedProducts.list.length);
+
     if (this.storedProducts?.list?.length) {
       alert('Data already saved! ')
       return
