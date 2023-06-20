@@ -89,15 +89,18 @@ export class HomeComponent implements OnInit {
       },
     ]
   }
-  printObject() {
-    console.log(this.products.list);
-  }
+  // printObject() {
+  //   console.log(this.products.list);
+  // }
 
   allProducts: any;
   storedProducts: any;
 
   ngOnInit(): void {
-    this.printObject()
+    // this.printObject()
+    this.allProducts = localStorage.getItem('products')
+    this.storedProducts = JSON.parse(this.allProducts)
+    // console.log(this.storedProducts);
   }
 
   saveToLocalstrage() {

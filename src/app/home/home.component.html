@@ -6,7 +6,7 @@
 
     </div>
     <div class="grid grid-cols-3 gap-8 mt-5">
-        <div *ngFor=" let product of products?.list">
+        <div *ngFor=" let product of this.storedProducts?.list ? this.storedProducts?.list : products?.list">
             <div class="shadow-lg bg-[#ffffffcc]">
                 <img src={{product?.img}} alt="">
                 <div class="p-3">
