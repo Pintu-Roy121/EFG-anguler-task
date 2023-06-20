@@ -1,4 +1,3 @@
-import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,9 +12,17 @@ export class ProductEditComponent implements OnInit {
   allProducts: any;
   filterProduct: any;
   allList: any;
+  // value: any;
 
   constructor(private route: ActivatedRoute) { }
 
+  // getValues(val) {
+  //   console.warn(val);
+  // }
+
+  getValues(value: any) {
+    console.log(value);
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -25,11 +32,10 @@ export class ProductEditComponent implements OnInit {
 
     this.filterProduct = this.allList?.find((product: any) => product.id == this.id)
     // console.log(this.filterProduct);
+
+
   }
 
-  onSubmit(event: Event): void {
-    // event.preventDefault();
-    event.preventDefault()
-    console.log(event.target);
-  }
+
+
 }

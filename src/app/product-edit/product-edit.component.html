@@ -3,39 +3,42 @@
             class="font-bold text-sky-600">{{this.filterProduct?.name}}</span>
     </p>
 
-    <form (submit)="onSubmit($event)" class="bg-slate-100 p-5 my-5 rounded-lg">
-        <div class="grid grid-cols-2 gap-6 ">
-            <div>
-                <label>Product Name: </label>
-                <input type="text" name="name" placeholder="" class="border rounded-md w-full px-2 py-1">
-            </div>
-            <div>
-                <label>Category Name: </label>
-                <input type="text" name="category" formControlName="category"
-                    defaultValue={{this.filterProduct?.category}} class="border rounded-md w-full px-2 py-1">
-            </div>
-            <div>
-                <label>Price: </label>
-                <input type="text" defaultValue={{this.filterProduct?.price}}
-                    class="border rounded-md w-full px-2 py-1">
-            </div>
-            <div>
-                <label>Stcock: </label>
-                <input type="text" defaultValue={{this.filterProduct?.stock}}
-                    class="border rounded-md w-full px-2 py-1">
-            </div>
-            <div>
-                <label>Image URL: </label>
-                <input type="text" defaultValue={{this.filterProduct?.img}} class="border rounded-md w-full px-2 py-1">
-            </div>
-            <div>
-                <label>Brand Name: </label>
-                <input type="text" defaultValue={{this.filterProduct?.seller}}
-                    class="border rounded-md w-full px-2 py-1">
+    <form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
+        <div class="bg-slate-100 p-5 my-5 rounded-lg">
+            <div class="grid grid-cols-2 gap-6 ">
+                <div>
+                    <label>Product Name: </label>
+                    <input type="text" name="name" ngModel placeholder={{this.filterProduct?.name}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
+                <div>
+                    <label>Category Name: </label>
+                    <input type="text" name="category" ngModel placeholder={{this.filterProduct?.category}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
+                <div>
+                    <label>Price: </label>
+                    <input type="text" name="price" ngModel placeholder={{this.filterProduct?.price}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
+                <div>
+                    <label>Stcock: </label>
+                    <input type="text" name="stock" ngModel placeholder={{this.filterProduct?.stock}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
+                <div>
+                    <label>Image URL: </label>
+                    <input type="text" name="image" ngModel placeholder={{this.filterProduct?.img}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
+                <div>
+                    <label>Brand Name: </label>
+                    <input type="text" name="seller" ngModel placeholder={{this.filterProduct?.seller}}
+                        class="border rounded-md w-full px-2 py-1">
+                </div>
             </div>
         </div>
-
-        <input type="submit" value="Submit"
-            class="px-3 py-2 rounded-md bg-sky-600 w-full text-white font-semibold  flex justify-center mt-8">
+        <button type="submit"
+            class="px-3 py-2 rounded-md bg-sky-600 w-full text-white font-semibold  flex justify-center mt-8">Submit</button>
     </form>
 </div>
