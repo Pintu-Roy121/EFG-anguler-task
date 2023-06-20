@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-edit',
@@ -14,10 +14,10 @@ export class ProductEditComponent implements OnInit {
   allList: any;
   remainProduct: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
+  // constructor(private router: Router) { }
 
   getValues(value: any) {
-
     this.id = this.route.snapshot.paramMap.get('id');
     this.products = localStorage.getItem('products');
     this.allProducts = JSON.parse(this.products)
@@ -42,6 +42,7 @@ export class ProductEditComponent implements OnInit {
 
     const allPproduct = { list: [product, ...this.remainProduct] }
     localStorage.setItem('products', JSON.stringify(allPproduct))
+    this.router.navigate(['']);
 
   }
 
